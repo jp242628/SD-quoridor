@@ -15,21 +15,24 @@ Versão distribuída do jogo Quoridor para 4 jogadores. Cada jogador usa um proc
 
 ## Como executar
 
-Requer Python 3.8+ (somente biblioteca padrão, nada para instalar). Abra 5 terminais na raiz do repositório:
+Requer Python 3.8+ (somente biblioteca padrão, nada para instalar). Em Linux e macOS, use `python3` no lugar de `python`.
+
+Abra 5 terminais na raiz do repositório:
 
 ```
-python servidor/servidor.py     # terminal 1 (ou python3)
-python cliente/cliente.py       # terminais 2, 3, 4 e 5 (ou python3)
+python servidor/servidor.py     # terminal 1
+python cliente/cliente.py       # terminais 2, 3, 4 e 5 (um por jogador)
 ```
 
-A partida começa quando o 4º jogador entra. Para usar máquinas diferentes:
-`python servidor/servidor.py --host 0.0.0.0` (ou `python3`) e `python cliente/cliente.py --servidor IP_DO_SERVIDOR` (ou `python3`).
-A porta padrão é 8000 (`--porta`).
-Se a porta 8000 estiver ocupada e aparecer o erro `Address already in use`, use a porta 8001 no servidor e nos clientes:
+A partida começa quando o 4º jogador entra.
+
+**Outras máquinas:** inicie o servidor com `--host 0.0.0.0` e cada cliente com `--servidor IP_DO_SERVIDOR`.
+
+**Porta ocupada:** a porta padrão é 8000 (`--porta`). Se aparecer erro de endereço já em uso (`Address already in use` no Linux/macOS), use outra porta no servidor e em todos os clientes, por exemplo:
 
 ```
-python servidor/servidor.py --porta 8001       # ou python3
-python cliente/cliente.py --porta 8001         # em cada terminal de jogador
+python servidor/servidor.py --porta 8001
+python cliente/cliente.py --porta 8001     # em cada terminal de jogador
 ```
 
 ## Como jogar
